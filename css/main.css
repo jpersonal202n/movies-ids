@@ -1,0 +1,104 @@
+:root{
+    --rojo:#E50914;
+    --fondo:#141414;
+}
+/*REINICIAR LOS ESTILOS QUE POR DEFECTO EL NAVEGADOR TIENE*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*hace que el tamaño de un elemento sea más predecible y controlable al incluir el relleno y el borde en el tamaño total de la caja.*/
+}
+body {
+    background-color: var(--fondo);
+    font-family: 'Open Sans', sans-serif;
+}
+.contenedor {
+    width: 90%;
+    margin: auto;
+}
+header {
+    padding: 20px 0;
+}
+header .contenedor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /*centrar de forma vertical*/
+}
+header .logotipo {
+    font-family: "Bebas Neue",cursive;
+    font-weight: normal;
+    color:var(--rojo);
+    font-size: 40px;
+}
+header nav a {
+    color:#AAA;
+    text-decoration: none;
+    margin-right: 15px;
+}
+header nav a:hover,
+header nav a.activo{
+    color:white;
+}
+/*-----------PELICUA PRINCIPAL----------*/
+.pelicula-principal {
+    font-size: 16px;
+    /*min-height:650px el min height cambia conforme al tamaño de la letra*/
+    min-height: 40.62em; /* cambia relativo al tamaño del texto  */
+    color:white;
+    background-image: /*primer fondo*/linear-gradient(rgba(0,0,0,.50) 0% , rgba(0,0,0,0.50) 100%), /*segundo fondo*/url('../images/8.png');
+    background-position: /*vertical*/center /*horizontal*/ center;
+    background-size: cover; /*para que la imagen ocupe el 100 % dispobile de la pantalla*/
+    margin-bottom: 3.12em;
+    display: flex;
+    align-items: end;
+}
+.pelicula-principal .contenedor {
+    margin: 0 auto;
+    margin-bottom: 6.25em; /*100px*/
+}
+.pelicula-principal .titulo {
+    font-weight: 600;
+    font-size: 3.12em; /*50 px*/
+    margin-bottom: 0.4em; /*20 px se calcula conforme a los 16px*/
+}
+.pelicula-principal .descripcion {
+    font-weight: normal;
+    font-size: 1em;
+    line-height: 1.75em; /*28 px*/
+    max-width: 50%;
+    margin-bottom: 1.25em; /*20 px*/
+}
+.pelicula-principal .boton {
+    background-color: rgba(0,0,0,0.5);
+    border:none;
+    border-radius: 0.31em; /*5px*/
+    padding: 0.93em 1.87em; /*15px 30px*/
+    color:white;
+    margin-right: 1.25em; /*20 px*/
+    cursor: pointer;
+    transition:.3s ease all;
+    font-size: 1.12em ; /*18px*/
+}
+.pelicula-principal .boton:hover {
+    background-color: white;
+    color:#000;
+}
+.pelicula-principal .boton i {
+    margin-right: 1.25em; /*25px*/
+}
+@media screen and (max-width:800px) {
+    header .logotipo {
+        margin-bottom: 10px;
+        font-size: 30px;
+    }
+    header .contenedor {
+        flex-direction: column;
+        text-align: center;
+    }
+    .pelicula-principal {
+        font-size: 14px;
+    }
+    .pelicula-principal .descripcion {
+        max-width: 100%;
+    }
+}
